@@ -8,116 +8,116 @@ st.set_page_config(
     page_icon="🏠",
     layout="wide"
 )
-   st.markdown("""
-   <style>
-   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+st.markdown("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-   html, body, [class*="css"], .stApp {
-       font-family: 'Inter', sans-serif;
-   }
+html, body, [class*="css"], .stApp {
+   font-family: 'Inter', sans-serif;
+}
 
-   /* Background with a soft glow in the corners */
-   .stApp {
-       background:
-           radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.10), transparent 40%),
-           radial-gradient(circle at 90% 10%, rgba(167, 139, 250, 0.10), transparent 40%),
-           #070B14;
-   }
+/* Background with a soft glow in the corners */
+.stApp {
+   background:
+       radial-gradient(circle at 10% 0%, rgba(34, 211, 238, 0.10), transparent 40%),
+       radial-gradient(circle at 90% 10%, rgba(167, 139, 250, 0.10), transparent 40%),
+       #070B14;
+}
 
-   /* Glowing gradient title */
-   h1 {
-       background: linear-gradient(90deg, #22D3EE, #A78BFA);
-       -webkit-background-clip: text;
-       -webkit-text-fill-color: transparent;
-       font-weight: 800;
-       letter-spacing: -0.5px;
-       filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.35));
-   }
+/* Glowing gradient title */
+h1 {
+   background: linear-gradient(90deg, #22D3EE, #A78BFA);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-weight: 800;
+   letter-spacing: -0.5px;
+   filter: drop-shadow(0 0 12px rgba(34, 211, 238, 0.35));
+}
 
-   h2, h3 {
-       color: #E6EDF7;
-       font-weight: 700;
-       border-left: 3px solid #22D3EE;
-       padding-left: 12px;
-       text-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
-   }
+h2, h3 {
+   color: #E6EDF7;
+   font-weight: 700;
+   border-left: 3px solid #22D3EE;
+   padding-left: 12px;
+   text-shadow: 0 0 14px rgba(34, 211, 238, 0.35);
+}
 
-   /* Result cards */
-   [data-testid="stMetric"] {
-       background: linear-gradient(145deg, #0F1626, #131C31);
-       border: 1px solid rgba(34, 211, 238, 0.35);
-       border-radius: 16px;
-       padding: 16px 20px;
-       box-shadow: 0 0 18px rgba(34, 211, 238, 0.15);
-       transition: all 0.25s ease;
-   }
-   [data-testid="stMetric"]:hover {
-       border-color: #22D3EE;
-       box-shadow: 0 0 28px rgba(34, 211, 238, 0.40);
-       transform: translateY(-2px);
-   }
-   [data-testid="stMetricValue"] {
-       color: #FBBF24;
-       font-weight: 700;
-       text-shadow: 0 0 14px rgba(251, 191, 36, 0.40);
-   }
-   [data-testid="stMetricLabel"] {
-       color: #94A3B8;
-   }
+/* Result cards */
+[data-testid="stMetric"] {
+   background: linear-gradient(145deg, #0F1626, #131C31);
+   border: 1px solid rgba(34, 211, 238, 0.35);
+   border-radius: 16px;
+   padding: 16px 20px;
+   box-shadow: 0 0 18px rgba(34, 211, 238, 0.15);
+   transition: all 0.25s ease;
+}
+[data-testid="stMetric"]:hover {
+   border-color: #22D3EE;
+   box-shadow: 0 0 28px rgba(34, 211, 238, 0.40);
+   transform: translateY(-2px);
+}
+[data-testid="stMetricValue"] {
+   color: #FBBF24;
+   font-weight: 700;
+   text-shadow: 0 0 14px rgba(251, 191, 36, 0.40);
+}
+[data-testid="stMetricLabel"] {
+   color: #94A3B8;
+}
 
-   /* Form box */
-   [data-testid="stForm"] {
-       background: rgba(15, 22, 38, 0.75);
-       border: 1px solid rgba(167, 139, 250, 0.30);
-       border-radius: 18px;
-       padding: 24px;
-       box-shadow: 0 0 24px rgba(167, 139, 250, 0.10);
-   }
+/* Form box */
+[data-testid="stForm"] {
+   background: rgba(15, 22, 38, 0.75);
+   border: 1px solid rgba(167, 139, 250, 0.30);
+   border-radius: 18px;
+   padding: 24px;
+   box-shadow: 0 0 24px rgba(167, 139, 250, 0.10);
+}
 
-   /* Input boxes */
-   .stNumberInput input, .stSelectbox div[data-baseweb="select"] > div {
-       background-color: #0B1220 !important;
-       border-radius: 10px !important;
-       border: 1px solid #1F2A44 !important;
-   }
-   .stNumberInput input:focus {
-       border-color: #22D3EE !important;
-       box-shadow: 0 0 10px rgba(34, 211, 238, 0.45) !important;
-   }
+/* Input boxes */
+.stNumberInput input, .stSelectbox div[data-baseweb="select"] > div {
+   background-color: #0B1220 !important;
+   border-radius: 10px !important;
+   border: 1px solid #1F2A44 !important;
+}
+.stNumberInput input:focus {
+   border-color: #22D3EE !important;
+   box-shadow: 0 0 10px rgba(34, 211, 238, 0.45) !important;
+}
 
-   /* Glowing button */
-   [data-testid="stFormSubmitButton"] button {
-       background: linear-gradient(90deg, #06B6D4, #8B5CF6);
-       color: white;
-       border: none;
-       border-radius: 12px;
-       font-weight: 700;
-       letter-spacing: 0.4px;
-       padding: 0.7rem 1rem;
-       box-shadow: 0 0 20px rgba(34, 211, 238, 0.40);
-       transition: all 0.25s ease;
-   }
-   [data-testid="stFormSubmitButton"] button:hover {
-       box-shadow: 0 0 32px rgba(139, 92, 246, 0.70);
-       transform: translateY(-2px);
-       color: white;
-   }
+/* Glowing button */
+[data-testid="stFormSubmitButton"] button {
+   background: linear-gradient(90deg, #06B6D4, #8B5CF6);
+   color: white;
+   border: none;
+   border-radius: 12px;
+   font-weight: 700;
+   letter-spacing: 0.4px;
+   padding: 0.7rem 1rem;
+   box-shadow: 0 0 20px rgba(34, 211, 238, 0.40);
+   transition: all 0.25s ease;
+}
+[data-testid="stFormSubmitButton"] button:hover {
+   box-shadow: 0 0 32px rgba(139, 92, 246, 0.70);
+   transform: translateY(-2px);
+   color: white;
+}
 
-   /* Expander and alert boxes */
-   [data-testid="stExpander"] {
-       border: 1px solid rgba(34, 211, 238, 0.25);
-       border-radius: 14px;
-       background: rgba(15, 22, 38, 0.6);
-   }
-   [data-testid="stAlert"] {
-       border-radius: 14px;
-   }
+/* Expander and alert boxes */
+[data-testid="stExpander"] {
+   border: 1px solid rgba(34, 211, 238, 0.25);
+   border-radius: 14px;
+   background: rgba(15, 22, 38, 0.6);
+}
+[data-testid="stAlert"] {
+   border-radius: 14px;
+}
 
-   /* Hide default Streamlit menu and footer for a cleaner look */
-   #MainMenu {visibility: hidden;}
-   footer {visibility: hidden;}
-   </style>
-   """, unsafe_allow_html=True)
+/* Hide default Streamlit menu and footer for a cleaner look */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+</style>
+""", unsafe_allow_html=True)
 BASE_DIR = Path(__file__).resolve().parent
 
 def artifact_path(filename):
